@@ -1,5 +1,5 @@
 #!/bin/bash
-#This is an amoba game :D
+#This is an X_In_A_Row game.
 #Input parameters: 1- the size of the table 2- the winning conditions
 
 #This function counts the identical shapes which directly follow each other in a direction and returns the number of consequent shapes. The maximum number it returns is the winning condition.
