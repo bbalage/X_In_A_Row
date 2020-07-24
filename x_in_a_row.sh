@@ -286,7 +286,7 @@ while [ $winner -eq 0 ]; do
 		if [ ${coor[$((cury*tablesize+curx))]} -eq 0 ]; then
 			((limit--))
 			if [ $turn -eq 1 ]; then
-				printf "X"
+				printf "\e[1;34mX\e[0m"
 				coor[$((cury*tablesize+curx))]=1
 				wincheck 1 $wincond
 				if [ $? -eq 1 ]; then
@@ -298,7 +298,7 @@ while [ $winner -eq 0 ]; do
 					priorities[((cury*tablesize+curx))]=-1
 				fi
 			else
-				printf "O"
+				printf "\x1B[31mO\e[0m"
 				coor[$((cury*tablesize+curx))]=2
 				turn=1
 				wincheck 2 $wincond
@@ -322,7 +322,7 @@ while [ $winner -eq 0 ]; do
 				cury=$((max/tablesize))
 				setpriority 2
 				tput cup $((cury+2)) $((curx*2+1))
-				printf "O"
+				printf "\x1B[31mO\e[0m"
 				wincheck 2 $wincond
 				if [ $? -eq 2 ]; then
 					winner=2
